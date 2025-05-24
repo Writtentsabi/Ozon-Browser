@@ -377,8 +377,10 @@ async function retrieve() {
 
 		await category();
 
-		news('general', loc);
+		await news('general', loc);
 
 	})
 
 }
+
+await retrieve();
