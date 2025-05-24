@@ -28,7 +28,7 @@ document.getElementById('ask').addEventListener('click', async () => {
 
 	input.setAttribute('id', 'question');
 
-	input.textContent = document.getElementById('search').value;
+	input.innerText = document.getElementById('search').value;
 
 	prompts.appendChild(input);
 
@@ -75,7 +75,7 @@ document.getElementById('ask').addEventListener('click', async () => {
 
 	icon.setAttribute('class','fa fa-copy');
 
-	output.textContent = response.text;
+	output.innerText = response.text;
 
 	copy.appendChild(icon);
 
