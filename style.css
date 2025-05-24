@@ -529,7 +529,7 @@ body {
 
 }
 
-p {
+.news-title {
 
 	text-align: center;
 
@@ -543,7 +543,7 @@ p {
 
 }
 
-h1 {
+.application-title {
 
 	text-align: center;
 
