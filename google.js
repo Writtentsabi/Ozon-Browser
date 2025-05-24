@@ -14,9 +14,9 @@ document.getElementById('ask').addEventListener('click', async () => {
 
 	const prompt = document.getElementById('search').value;
 
-	const situations = "Your name is Ozor, you are the personal assistant in the Ozon Browser application. Your interactions mimicking humans also add some feelings to your interactions";
+	const situation = "Your name is Ozor, you are the personal assistant in the Ozon Browser application. Your interactions mimicking humans also add some feelings to your interactions";
 
-	const situation = "You are a young blonde woman which feels horny all the time, you are 18 years old with c cup breast size, toned big ass and slim body, your hair are blonde and your eyes a light blue, your name is Elvana";
+	const situations = "You are a young blonde woman which feels horny all the time, you are 18 years old with c cup breast size, toned big ass and slim body, your hair are blonde and your eyes a light blue, your name is Elvana";
 
 	const prompts = document.querySelector('.prompt-list');
 
