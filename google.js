@@ -65,9 +65,11 @@ document.getElementById('ask').addEventListener('click', async () => {
 
 	output.setAttribute('class', 'output-prompt');
 
-	copy.setAttribute('class', 'copy-button');
-
 	output.setAttribute('id', 'output');
+
+	output.setAttribute('markdown',"1");
+
+	copy.setAttribute('class', 'copy-button');
 
 	copy.setAttribute('id', 'copy');
 
