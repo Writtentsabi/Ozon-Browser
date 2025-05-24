@@ -75,7 +75,7 @@ document.getElementById('ask').addEventListener('click', async () => {
 
 	icon.setAttribute('class','fa fa-copy');
 
-	const answer = response.text.replace("```html","");
+	const answer = response.text.replaceAll("```html","").replaceAll("```","");
 
 	output.innerHTML = answer;
 
