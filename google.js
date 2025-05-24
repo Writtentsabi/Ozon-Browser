@@ -77,10 +77,6 @@ document.getElementById('ask').addEventListener('click', async () => {
 
 	output.innerHTML = response.text;
 
-	copy.appendChild(icon);
-
-	output.appendChild(copy);
-
 	prompts.appendChild(output);
 
 	historyArray.push({
