@@ -28,7 +28,7 @@ document.getElementById('ask').addEventListener('click', async () => {
 
 	input.setAttribute('id', 'question');
 
-	input.innerText = document.getElementById('search').value;
+	input.innerHTML = document.getElementById('search').value;
 
 	prompts.appendChild(input);
 
@@ -75,7 +75,7 @@ document.getElementById('ask').addEventListener('click', async () => {
 
 	icon.setAttribute('class','fa fa-copy');
 
-	output.innerText = response.text;
+	output.innerHTML = response.text;
 
 	copy.appendChild(icon);
 
@@ -116,7 +116,7 @@ document.getElementById('image'). addEventListener('click', async () => {
 	input.setAttribute('id',
 		'question');
 
-	input.textContent = document.getElementById('search').value;
+	input.innerHTML = document.getElementById('search').value;
 
 	prompts.appendChild(input);
 
@@ -179,11 +179,11 @@ document.getElementById('image'). addEventListener('click', async () => {
 
 				output.appendChild(outputImg);
 
-				outputTxt.textContent = image.prompt;
+				outputTxt.innerHTML = image.prompt;
 
 			} else {
 
-				outputTxt.textContent = image.message;
+				outputTxt.innerHTML = image.message;
 
 			}
 
