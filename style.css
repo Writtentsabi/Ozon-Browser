@@ -75,6 +75,8 @@ body {
 
 	justify-content: center;
 
+	font-weight: bold;
+
 }
 
 .input-prompt {
@@ -83,8 +85,6 @@ body {
 
 	border-bottom-right-radius: 30px;
 
-	font-weight: bold;
-
 }
 
 .output-prompt {
@@ -92,8 +92,6 @@ body {
 	border-top-left-radius: 0px;
 
 	border-bottom-left-radius: 30px;
-
-	font-weight: bold;
 
 }
 
