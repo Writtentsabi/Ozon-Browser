@@ -1,4 +1,4 @@
-function news(cat, loc) {
+async function news(cat, loc) {
 
 	const newsKey = '7c5e02b67c5949c58a5653c78adbecf1';
 
@@ -150,7 +150,7 @@ function news(cat, loc) {
 
 }
 
-function weather(lat, lon) {
+async function weather(lat, lon) {
 
 	const weatherKey = '95309698a2291a49ea63b30477ece22b';
 
@@ -275,7 +275,7 @@ function weather(lat, lon) {
 
 }
 
-function category() {
+async function category() {
 
 	const categoryList = document.querySelector('.category-list');
 
@@ -323,7 +323,7 @@ function category() {
 
 }
 
-function filter(category, location) {
+async function filter(category, location) {
 
 	const categoryList = document.querySelector('.category-list');
 
@@ -353,11 +353,11 @@ function filter(category, location) {
 
 	}
 
-	news(category, location);
+	await news(category, location);
 
 }
 
-function retrieve() {
+async function retrieve() {
 
 	locUrl = `http://ip-api.com/json/`;
 
@@ -373,9 +373,9 @@ function retrieve() {
 
 		lat = location.lat;
 
-		weather(lat, lon);
+		await weather(lat, lon);
 
-		category();
+		await category();
 
 		news('general', loc);
 
