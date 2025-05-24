@@ -73,8 +73,6 @@ body {
 
 	font-size: clamp(.25rem, 2.5vmin + .25rem, 2.5rem);
 
-	font-weight: bold;
-
 	justify-content: center;
 
 }
@@ -85,6 +83,8 @@ body {
 
 	border-bottom-right-radius: 30px;
 
+	font-weight: bold;
+
 }
 
 .output-prompt {
@@ -92,6 +92,8 @@ body {
 	border-top-left-radius: 0px;
 
 	border-bottom-left-radius: 30px;
+
+	font-weight: bold;
 
 }
 
