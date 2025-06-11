@@ -1,18 +1,20 @@
-async function news(cat, loc) {
+function news(cat, loc) {
 
-	const newsKey = '7c5e02b67c5949c58a5653c78adbecf1';
+	const newsKey = 'pub_7706586c1b4bcc1a50e9f6c763a6b0936a183';
 
 	const newsList = document.querySelector('.news-list');
 
 	if (!cat) {
 
-		url = `http://newsapi.org/v2/top-headlines?country=${loc}&pageSize=100&apiKey=${newsKey}`;
+		url = `https://newsdata.io/api/1/latest?apikey=${newsKey}&country=${loc}`;
 
 	} else {
 
-		url = `http://newsapi.org/v2/top-headlines?country=${loc}&category=${cat}&pageSize=100&apiKey=${newsKey}`;
+		url = `https://newsdata.io/api/1/latest?apikey=${newsKey}&country=${loc}&category=${cat}`;
 
 	}
+
+	url = `https://newsdata.io/api/1/latest?apikey=${newsKey}&country=${loc}`;
 
 	fetch(url).then(result=> {
 
@@ -28,11 +30,11 @@ async function news(cat, loc) {
 
 			if (!cat) {
 
-				newsUrl = `http://newsapi.org/v2/top-headlines?category=general&pageSize=100&apiKey=${newsKey}`;
+				newsUrl = `https://newsdata.io/api/1/latest?apikey=${newsKey}`;
 
 			} else {
 
-				var newsUrl = `http://newsapi.org/v2/top-headlines?category=${cat}&pageSize=100&apiKey=${newsKey}`;
+				var newsUrl = `https://newsdata.io/api/1/latest?apikey=${newsKey}&category=${cat}`;
 
 			}
 
@@ -48,9 +50,9 @@ async function news(cat, loc) {
 
 				newsList.removeChild(newsList.children[i]);
 
-			}if (news.status == 'ok') {
+			}if (news.status == 'success') {
 
-				news.articles.forEach(article=> {
+				news.results.forEach(article=> {
 
 					let img = document.createElement('img');
 
@@ -68,7 +70,7 @@ async function news(cat, loc) {
 
 					essay_item.setAttribute('class', 'article');
 
-					essay.setAttribute('href', article.url);
+					essay.setAttribute('href', article.link);
 
 					essay.setAttribute('target', '_blank');
 
@@ -76,7 +78,7 @@ async function news(cat, loc) {
 
 					img.setAttribute('class', 'article-image');
 
-					img.setAttribute('src', article.urlToImage);
+					img.setAttribute('src', article.image_url);
 
 					img.setAttribute('onerror', "this.onerror=null;this.src='https://cdn.iconscout.com/icon/free/png-256/free-news-1661516-1410317.png';");
 
@@ -86,15 +88,15 @@ async function news(cat, loc) {
 
 					author.setAttribute('class', 'author');
 
-					if (article.source.name !== null) {
+					if (article.source_name !== null) {
 
-						info.textContent = article.source.name;
+						info.textContent = article.source_name;
 
-						author.textContent = article.author;
+						author.textContent = article.creator;
 
 					} else {
 
-						info.textContent = article.author;
+						info.textContent = article.creator;
 
 					}
 
@@ -150,7 +152,7 @@ async function news(cat, loc) {
 
 }
 
-async function weather(lat, lon) {
+function weather(lat, lon) {
 
 	const weatherKey = '95309698a2291a49ea63b30477ece22b';
 
@@ -275,7 +277,7 @@ async function weather(lat, lon) {
 
 }
 
-async function category() {
+function category() {
 
 	const categoryList = document.querySelector('.category-list');
 
@@ -323,7 +325,7 @@ async function category() {
 
 }
 
-async function filter(category, location) {
+function filter(category, location) {
 
 	const categoryList = document.querySelector('.category-list');
 
@@ -353,11 +355,11 @@ async function filter(category, location) {
 
 	}
 
-	await news(category, location);
+	news(category, location);
 
 }
 
-async function retrieve() {
+function retrieve() {
 
 	locUrl = `http://ip-api.com/json/`;
 
@@ -373,14 +375,12 @@ async function retrieve() {
 
 		lat = location.lat;
 
-		await weather(lat, lon);
+		weather(lat, lon);
 
-		await category();
+		category();
 
-		await news('general', loc);
+		news('general', loc);
 
 	})
 
 }
-
-await retrieve();
